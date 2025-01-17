@@ -1,0 +1,132 @@
+/* styling section */
+/*  Aesthetic image gallery yuvashree.m */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #9925dd;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    aspect-ratio: 1; /* Ensures a 1:1 ratio for the images */
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Overlay for Full-Screen Image */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.close-btn,
+.nav-btn {
+    position: absolute;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.close-btn {
+    top: 20px;
+    right: 20px;
+}
+
+.nav-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-btn {
+    left: 30px;
+}
+
+.next-btn {
+    right: 30px;
+}
+
+.nav-btn:hover,
+.close-btn:hover {
+    transform: scale(1.2);
+}
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #121212;
+    border-top: 2px solid #414b4a;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-btn {
+        font-size: 1.5rem;
+    }
+    .close-btn {
+        font-size: 1.8rem;
+    }
+}
